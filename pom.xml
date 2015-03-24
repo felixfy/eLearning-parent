@@ -1,0 +1,161 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.casper.eLearning</groupId>
+	<artifactId>eLearning-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+
+	<!-- eLearning-parent中包含的模块 -->
+	<modules>
+		<module>../basic-hibernate</module>
+	</modules>
+
+
+	<!-- 项目中的公共属性值 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<!-- 配置整个项目中的依赖 -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- =================================================================所有的测试相关的包============================================================================  -->
+			<!-- JUnit单元测试框架 -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.10</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- Spring整合JUnit单元测试框架 -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>3.2.2.RELEASE</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- 基于service层的测试包  -->
+			<dependency>
+				<groupId>org.easymock</groupId>
+				<artifactId>easymock</artifactId>
+				<version>3.1</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- 基于dao层的DBunit的测试框架 -->
+			<dependency>
+				<groupId>org.dbunit</groupId>
+				<artifactId>dbunit</artifactId>
+				<version>2.2</version>
+				<scope>test</scope>
+			</dependency>
+				<!-- Spring整合DBunit数据库的单元测试框架 -->
+			<dependency>
+				<groupId>com.github.springtestdbunit</groupId>
+				<artifactId>spring-test-dbunit</artifactId>
+				<version>1.0.0</version>
+				<scope>test</scope>
+			</dependency>
+		
+			<!--  =================================================================Hibernate的相关包============================================================================================= -->
+			<!-- Hibernate的核心包 -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>4.2.0.Final</version>
+			</dependency>
+			<!-- 实现依赖注入的包， -->
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>1</version>
+			</dependency>
+			<!-- oracle的数据库驱动jar包 -->
+			<dependency>
+				<groupId>org.casper.oracle</groupId>
+				<artifactId>ojdbc</artifactId>
+				<version>14.0</version>
+			</dependency>
+			<!-- 数据库连接池 -->
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>1.4</version>
+			</dependency>
+			
+			<!-- ===============================================================Spring相关的包============================================================================================== -->
+			<!-- Spring的context：上下文包 -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>3.2.2.RELEASE</version>
+			</dependency>
+			<!-- Spring的核心包 -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>3.2.2.RELEASE</version>
+			</dependency>
+			<!-- Spring的beans -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>3.2.2.RELEASE</version>
+			</dependency>
+			<!-- spring-aop的jar包 -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>3.2.2.RELEASE</version>
+			</dependency>
+				<!-- 利用aop做事物需要的切面的jar -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>1.7.2</version>
+			</dependency>
+			<!-- Spring与Hibernate的整合的包 -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>3.2.2.RELEASE</version>
+			</dependency>
+			<!-- ===========================================================================================Struts的相关包================================================================  -->
+			
+			
+			
+			
+				
+			<!-- ===========================================================================================日志组件======================================================================= -->
+			<!-- slf4j日志组件 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.5</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+
+
+	<!-- 配置整个项目的插件 -->
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- 利用compiler插件设置项目的编译环境为:jre1.6 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.0</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
