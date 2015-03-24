@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 
 
-	<!-- eLearning-parent中包含的模块 -->
+	<!-- eLearning-parent中包含的模块 ：备注：始终要注意模块目录的的关系-->
 	<modules>
 		<module>../basic-hibernate</module>
 	</modules>
